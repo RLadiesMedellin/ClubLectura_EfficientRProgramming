@@ -1,0 +1,6 @@
+1. Enlace taller: https://rpubs.com/fhernanb/883010
+
+2. Enlace Libros:
+
+Advance R: https://adv-r.hadley.nz/
+Efficient R programming: https://csgillespie.github.io/efficientR/
