@@ -59,15 +59,28 @@ for (i in 1:length(z)) z[i] <- x[i] + y[i]
 M <- matrix(seq(1,16), 4, 4)
 M
 
-# apply min to rows
+# aplicar min a filas
 apply(M, 1, min)
 
-# apply max to columns
+# aplicar max a columnas
 apply(M, 2, max)
 
-# apply sum to columns
+# aplicar sum a columnas
 apply(M, 2, sum) 
 
+
+# base de datos
+data("iris")
+
+# MARGIN=1: corresponds to rows
+row_sd = apply(iris[, c(1,2,3,4)], 1, sd)
+row_sd
+
+col_sd = apply(iris[, c(1,2,3,4)], 2, sd)
+col_sd
+
+col_sd = apply(iris[, c(1,2,3,4)], 2, sd, na.rm = TRUE) #remove missing values
+col_sd
 
 # Función lapply() --------------------------------------------------------
 
@@ -78,6 +91,22 @@ lapply(x, FUN = length)
 
 lapply(x, FUN = sum) 
 
+# for loop versus lapply()
+mi_vector <- 6:12
+mi_vector
+resultado <- NULL
+posicion <- 1
+
+for(numero in mi_vector) {
+  resultado[posicion] <- sqrt(numero)
+  posicion <- posicion + 1
+}
+
+resultado
+
+resultado <- lapply(mi_vector, sqrt)
+resultado
+as.numeric(resultado)
 
 # Función sapply() --------------------------------------------------------
 
